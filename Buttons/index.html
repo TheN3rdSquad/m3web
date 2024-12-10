@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+		<script type="importmap">
+			{
+				"imports": {
+					"@material/web/": "https://esm.run/@material/web/"
+				}
+			}
+		</script>
+		<script type="module">
+			import '@material/web/all.js';
+			import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+	
+			document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+		</script>
+	</head>
+	<body>
+		<h1 class="md-typescale-display-medium">Getting to Know MD Buttons!</h1>
+		<form>
+			<h2>Basic MD buttons</h2>
+			<md-outlined-button>Back</md-outlined-button>
+			<md-filled-button>Complete</md-filled-button>
+
+			<h2>Secondary MD buttons</h2>
+
+			<md-filled-tonal-button>
+				Send
+				<svg slot="icon" viewBox="0 0 48 48"><path d="M6 40V8l38 16Zm3-4.65L36.2 24 9 12.5v8.4L21.1 24 9 27Zm0 0V12.5 27Z"/></svg>
+			</md-filled-tonal-button>
+			
+			<md-text-button trailing-icon>
+				Open
+				<svg slot="icon" viewBox="0 0 48 48"><path d="M9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h13.95v3H9v30h30V25.05h3V39q0 1.2-.9 2.1-.9.9-2.1.9Zm10.1-10.95L17 28.9 36.9 9H25.95V6H42v16.05h-3v-10.9Z"/></svg>
+			</md-text-button>
+
+			<h2>Accessibility features</h2>
+			<md-elevated-button aria-label="Add a new contact">Add</md-elevated-button>
+
+			<h2>Focusable & Soft-disabled</h2>
+			<p>
+				By default, disabled buttons are not focusable. But soft-disabled buttons are.
+			</p>
+			<div role="toolbar">
+				<md-text-button>Copy</md-text-button>
+				<md-text-button>Cut</md-text-button>
+				<!--
+					This button is disabled but kept focusable to improve its discoverability
+					in the toolbar.
+				-->
+				<md-text-button soft-disabled>Paste</md-text-button>
+			</div>
+			<h2>Elevated Buttons</h2>
+			<p>
+				Essentially filled tonal buttons with shadow effect. Only use these when there needs to be a distinction 
+				between the patterned background and the button.
+			</p>
+			<md-elevated-button>Elevated</md-elevated-button>
+		
+			<h2>Filled Buttons</h2>
+			<p>
+				Used mostly for primary actions.
+			</p>
+			<md-filled-button>Join Now</md-filled-button>
+
+			<h2>Filled Tonal Buttons</h2>
+			<p>
+				Serves as an alternative between filled and outlined buttons. Useful in context where slight emphasis is needed 
+				for the button beyond what the outlined button can provide. Examples include "Next" buttons.
+			</p>
+			<md-filled-tonal-button>Next step</md-filled-tonal-button>
+
+			<h2>Outlined Buttons</h2>
+			<p>
+				They are medium emphasis buttons. The contain actions that are important, but aren't primary actions in the 
+				app.
+			</p>
+			<md-outlined-button>Outlined</md-outlined-button>
+
+			<h2>Text Buttons</h2>
+			<p>Lowest priority buttons in your app.</p>
+			<md-text-button>Text</md-text-button>
+		</form>
+
+		<style>
+			body {
+				margin: 5% 5%;
+			}
+			h2 {
+				font-family: 'SF Pro Text';
+				font-weight: 600;
+				letter-spacing: 1px;
+			}
+			p {
+				font-family: 'SF Pro Text';
+				letter-spacing: 1px;
+				font-size: 16px;
+			}
+			form {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 16px;
+			}
+		</style>
+	</body>
+</html>
